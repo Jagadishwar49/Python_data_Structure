@@ -52,5 +52,20 @@ def mergeSort(A,l,r):
         
 print(mergeSort([8,4,7,3,1,6,8],0,7))
 
+def quickSort(A,l,r):
+    if(r-l<=0):
+        return()
+    yellow=l+1
+    for green in range(l+1,r):
+        if(A[green]<=A[l]):
+            (A[green],A[yellow])=(A[yellow],A[green])
+            yellow=yellow+1 
+    (A[l],A[yellow-1])=(A[yellow-1],A[l])
+    quickSort(A,l,yellow-1)
+    quickSort(A,yellow,r)
+l=[1,2,3,8,5,7,98,45,67,1]
+quickSort(l,0,len(l))
+print(l)
+
             
 
